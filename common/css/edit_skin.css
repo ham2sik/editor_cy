@@ -1,0 +1,108 @@
+.medium-toolbar-arrow-under:after {
+  top: 50px;
+  border-width: 10px 10px 0 10px;
+  border-color: #2C2C2B transparent transparent transparent; }
+
+.medium-toolbar-arrow-over:before {
+  top: -8px;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #373735 transparent; }
+
+.medium-editor-toolbar {
+  border: 1px solid #000;
+  background-color: #373735;
+  background-image: -webkit-linear-gradient(top, #363634, #272726);
+  background-image:    -moz-linear-gradient(top, #363634, #272726); /* Fx 3.6 부터 Fx 15 까지 처리 */
+  background-image:     -ms-linear-gradient(top, #363634, #272726); /* IE 10 Platform Previews, Consumer Preview */
+  background-image:      -o-linear-gradient(top, #363634, #272726); /* Opera 11.1 부터 12.0 까지 처리 */ 
+  background-image:         linear-gradient(to bottom, #363634, #272726); /* 표준문법, 표준문법은 반드시 마지막에 삽입해야한다. */
+  border-radius: 25px;
+    -moz-border-radius: 25px; 
+    -webkit-border-radius: 25px;
+  box-shadow: 0 0 3px #000;
+    -webkit-box-shadow: 0 0 3px #000;
+  transition: top 0.075s ease-out, left 0.075s ease-out;
+    -webkit-transition: top 0.075s ease-out, left 0.075s ease-out; }
+  .medium-editor-toolbar li button {
+    font-size:20px;
+    font-weight: normal;
+    line-height: 22px;
+    min-width: 43px;
+    height: 50px;
+    border: 0;
+    /*border-right: 1px solid #000;
+    border-left: 1px solid #333;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);*/
+    background-color: #373735;
+    color: #fff;
+    background-image: -webkit-linear-gradient(top, #363634, #272726);
+    background-image:    -moz-linear-gradient(top, #363634, #272726); /* Fx 3.6 부터 Fx 15 까지 처리 */
+    background-image:     -ms-linear-gradient(top, #363634, #272726); /* IE 10 Platform Previews, Consumer Preview */
+    background-image:      -o-linear-gradient(top, #363634, #272726); /* Opera 11.1 부터 12.0 까지 처리 */ 
+    background-image:         linear-gradient(to bottom, #363634, #272726); /* 표준문법, 표준문법은 반드시 마지막에 삽입해야한다. */
+    /*-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);*/
+    transition: background-color 0.2s ease-in;
+      -webkit-transition: background-color 0.2s ease-in; }
+    .medium-editor-toolbar li button:hover {
+      /*background-color: #373735;*/
+      color: #86e5dd; }
+  .medium-editor-toolbar li button sub {font-size:14px; bottom:0; }
+  .medium-editor-toolbar li .medium-editor-button-first {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px; }
+  .medium-editor-toolbar li .medium-editor-button-last {
+    border-right:none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px; }
+  .medium-editor-toolbar li .medium-editor-button-active {
+    background-color: #373735;
+    color: #fff;
+    background-image: -webkit-linear-gradient(top, #363634, #272726);
+    background-image:    -moz-linear-gradient(top, #363634, #272726); /* Fx 3.6 부터 Fx 15 까지 처리 */
+    background-image:     -ms-linear-gradient(top, #363634, #272726); /* IE 10 Platform Previews, Consumer Preview */
+    background-image:      -o-linear-gradient(top, #363634, #272726); /* Opera 11.1 부터 12.0 까지 처리 */ 
+    background-image:         linear-gradient(to bottom, #363634, #272726); /* 표준문법, 표준문법은 반드시 마지막에 삽입해야한다. */
+  }
+
+.medium-editor-toolbar .medium-editor-toolbar-actions {
+  padding:0 10px;
+}
+.medium-editor-toolbar-form-anchor {
+  background: #373735;
+  color: #999;
+  overflow:hidden;
+  padding:0 10px 0 20px; 
+  border-radius: 25px;
+    -moz-border-radius: 25px; 
+    -webkit-border-radius: 25px; }
+  .medium-editor-toolbar-form-anchor input {
+    width: 287px;
+    height: 50px;
+    background: #373735;
+    color: #ccc;
+    vertical-align:middle;
+    box-sizing: border-box; 
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;}
+  .medium-editor-toolbar-form-anchor input::-ms-clear {display: none;} /* ie10+에서 input clear button 숨김 */
+  .medium-editor-toolbar-form-anchor a {
+    color: #fff;
+    vertical-align:middle;
+    padding-top:4px; }
+
+.medium-editor-toolbar-anchor-preview {
+  background: #373735;
+  color: #fff;
+  border-radius: 14px; 
+    -moz-border-radius: 14px; 
+    -webkit-border-radius: 14px; }
+  .medium-editor-toolbar-anchor-preview i {
+    font-size:14px;
+    color: #dddddd;
+    text-decoration:none;
+    margin:5px 10px 5px 10px;
+  }
+
+.medium-editor-placeholder:after {
+  color: #b3b3b1; }

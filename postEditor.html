@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>Scoop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="title" content="뉴스의 시대 뉴스에 대해 우리가 알아야 할 모든 것 — Scoop" />
+<script type="text/javascript" src="./common/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="./common/js/editor_2sik.js"></script>
+<link rel="stylesheet" type="text/css" href="./common/css/base.css" />
+<link rel="stylesheet" type="text/css" href="./common/css/post.css" />
+<link rel="stylesheet" type="text/css" href="./common/css/editor.css" />
+<link rel="stylesheet" type="text/css" href="./common/css/edit_skin.css" />
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src=”http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js”></script>
+<![endif]-->
+<!--[if lt IE 10]>
+	<script type="text/javascript" src="/common/js/jquery.placeholder.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$('input, textarea').placeholder();
+	});
+	</script>
+<![endif]-->
+</head>
+<body>
+<div id="skip">
+	<a href="#contents">컨텐츠 바로가기</a>
+</div>
+<div id="wrap">
+	<!-- 헤더 -->
+	<header class="gnb">
+	</header>
+	<!-- //헤더 -->
+	<!-- 커버영역 -->
+	<article class="coverArea postEditor">
+		<figure>
+			<!-- <img src="/images/temp/img_post_cover.jpg" alt="" />
+			<span class="dimmed"></span> -->
+		</figure>
+		<div class="intro">
+			<h2 class="postTitle">
+				<div class="inpuText" contenteditable="true">제목</div>
+			</h2>
+			<div class="cover"><span class="btnChgCover"><input type="file" name="" id="" title="커버이미지 변경" /></span></div>
+			<ul class="editUtil fixed">
+				<li class="submit">
+					<button class="btnEditor01 disable">작성중으로 저장</button>
+					<button class="btnEditor01">완료</button>
+				</li>
+				<li class="cancel">
+					<button class="btnEditor01">취소</button>
+				</li>
+			</ul>
+		</div>
+	</article>
+	<!-- //커버영역 -->
+	<!-- 포스트 상세뷰 -->
+	<article id="contents" style="padding-top:58px;">
+<style type="text/css">
+.wysiwyg p.red {color:red;}
+/*.wysiwyg p:before {content: "p";color:red;font-size:11px;}
+.wysiwyg h1:before {content: "h1";color:red;font-size:11px;}
+.wysiwyg h2:before {content: "h2";color:red;font-size:11px;}
+*/
+.editor_toolbar {display:none;position:absolute;top:0;left:0;width:446px;height:50px;background-color:#373735;border:1px solid #000;border-radius:25px;z-index:1;}
+.editor_toolbar.on {display:block;}
+.editor_toolbar:after {position:absolute;top:50px;left:50%;margin-left:-8px;width:0;height:0;content:"";border-width:10px 10px 0 10px;border-style:solid;border-color:#373735 transparent transparent transparent;}
+.editor_toolbar ul {padding:0 10px;}
+.editor_toolbar ul li {float:left;}
+.editor_toolbar ul li button {min-width:43px;height:50px;padding:15px;font-size:20px;color:#fff;font-weight:bold;line-height:22px;background-color:#373735;border:none;overflow:hidden;border-radius:25px;}
+.editor_toolbar ul li button.on {color:#86e5dd;}
+.editor_toolbar ul li button:hover {color:#86e5dd;}
+/* anchor form */
+.editor_toolbar_form_anchor {position:absolute;top:0;left:0;width:446px;height:50px;background-color:#373735;z-index:10;}
+.anchorPreview {position:absolute;top:0;left:0;height:22px;padding:2px 10px;background-color:#373735;font-size:16px;color:#fff;line-height:22px;border-radius:13px;}
+.anchorPreview:after {position:absolute;top:-8px;left:50%;margin-left:-8px;width:0;height:0;content:"";border-width:0 10px 10px 10px;border-style:solid;border-color:transparent transparent #373735 transparent;}
+
+/* cy-test */
+.acticon-in {zoom:1; position:relative; display:inline-block;width:100px; height:70px; vertical-align:top; overflow:hidden;}
+.acticon-in img {position:absolute; top:0; left:0; width:100%;}
+
+</style>
+
+<script type="text/javascript">
+var acticonAni = ({
+	init : function(obj, fps, repeat) {
+		elementWrap = obj;
+		animationSpeed = fps;
+		repeatTime = repeat;
+
+		imgObj = elementWrap.getElementsByTagName('img')[0];
+		imgObj.style.top = '0';
+
+		objHeight = elementWrap.offsetHeight;
+		objY = parseInt(imgObj.style.top);
+		endY = imgObj.offsetHeight - objHeight;
+		this.run();
+
+		elementWrap.onmouseout = function() {
+			clearTimeout(acticonFunc);
+			imgObj.style.top='0';
+		};
+	},
+
+	run : function() {
+		if (objY !== endY)
+		{
+			objY = objY + objHeight;
+		}
+
+		imgObj.style.top = '-'+ objY +'px';
+
+		acticonFunc = setTimeout ("acticonAni.run()", animationSpeed);
+
+		if (objY==endY) {
+			setTimeout ("acticonAni.repeatSet()", repeatTime);
+		}
+	},
+
+	repeatSet : function() {
+		objY=-objHeight;
+	}
+});
+</script>
+		<!-- 한 스쿱 -->
+		<section class="editWrap focus">
+			<div class="scope">
+				<div class="wysiwyg" contenteditable="true" data-placeholder="글을 입력하세요."><div class="acticon-in" onmouseover="acticonAni.init(this, 200);"><img src="http://c1img.cyworld.co.kr/img/mall/acticon/155/155809_4_f.png" alt="우왕~♥" title="우왕~♥" style="top: 0px;"></div>
+				<h1>에이치원</h1><h2>에이치투</h2><p>아무것도 하기싫다</p><p>아무것도 안하지만</p><p><i>더 <b>열심히</b></i> 아<i>무것</i>도 하<u>기싫</u>다</p></div>
+
+				<!-- editor_toolbar -->
+				<div class="editor_toolbar">
+					<ul>
+						<li><button class="editor_action_left">L</li>
+						<li><button class="editor_action_center">C</li>
+						<li><button class="editor_action_right">R</li>
+						<li><button class="editor_action_header1">H<sub>1</sub></button></li>
+						<li><button class="editor_action_header2">H<sub>2</sub></button></li>
+
+						<li><button class="editor_action_bold">B</button></li>
+						<li><button class="editor_action_italic"><i>I</i></button></li>
+						<li><button class="editor_action_underline"><u>U</u></button></li>
+
+						<li><button class="editor_action_anchor">url</button></li>
+					</ul>
+					<div class="editor_toolbar_form_anchor" style="display:none;">
+						<input type="text" class="anchor_input" placeholder="Paste or type a link">
+						<a href="#" class="anchor_save">✓</a>
+						<a href="#" class="anchor_close">×</a>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$('.wysiwyg').off('tripleclick');
+					$('.wysiwyg').on('tripleclick', function(event) {
+						clearSelection();
+					});
+				</script>
+				<!-- editor_toolbar -->
+				
+				<div class="divis"><button class="switching" tabindex="-1">텍스트영역과 컨텐츠영역 위치를 서로 바꾸기</button></div>
+				<div class="contents">
+					<div class="loadCont">
+						<button class="btnClose" tabindex="-1">닫기</button>
+						<span class="btnPhoto" tabindex="-1">
+							<input name="" id="" title="사진 올리기" type="file">
+						</span>
+						<button class="btnUrl" tabindex="-1">외부URL</button>
+                        <input type="text" class="url" name="" id="" value="" placeholder="유튜브나 웹페이지 주소를 입력하고 엔터를 누르세요." />
+						<!-- <input type="text" class="url ac" name="" id="" value="가져오는 중입니다." /> -->
+					</div>
+				</div>
+			</div>
+			<div class="btnArea">
+				<button class="btnUp" tabindex="-1">이 스쿱 위로</button>
+				<button class="btnDown" tabindex="-1">이 스쿱 아래로</button>
+				<button class="btnDel" tabindex="-1">이 스쿱 지우기</button>
+			</div>
+			<div class="btmBtn">
+				<button class="btnLoad" tabindex="-1">스쿱불러오기</button><button class="btnAdd">스쿱추가하기</button>
+			</div>
+		</section>
+		<!-- //한 스쿱 -->
+		<!-- 한 스쿱 -->
+		<section class="editWrap focus">
+			<div class="scope">
+				<div class="wysiwyg" contenteditable="true" data-placeholder="글을 입력하세요."></div>
+				<!-- editor_toolbar -->
+				<div class="editor_toolbar">
+					<ul>
+						<li><button class="editor_action_left">L</li>
+						<li><button class="editor_action_center">C</li>
+						<li><button class="editor_action_right">R</li>
+						<li><button class="editor_action_header1">H<sub>1</sub></button></li>
+						<li><button class="editor_action_header2">H<sub>2</sub></button></li>
+
+						<li><button class="editor_action_bold">B</button></li>
+						<li><button class="editor_action_italic"><i>I</i></button></li>
+						<li><button class="editor_action_underline"><u>U</u></button></li>
+
+						<li><button class="editor_action_anchor">url</button></li>
+					</ul>
+				</div>
+				<div class="editor_toolbar_form_anchor" style="display:none;">
+					<input type="text" class="anchor_input" placeholder="Paste or type a link">
+					<a href="#" class="anchor_save">✓</a>
+					<a href="#" class="anchor_close">×</a>
+				</div>
+				<!-- editor_toolbar -->
+				<div class="divis"><button class="switching" tabindex="-1">텍스트영역과 컨텐츠영역 위치를 서로 바꾸기</button></div>
+				<div class="contents">
+					<div class="loadCont">
+						<button class="btnClose" tabindex="-1">닫기</button>
+						<span class="btnPhoto" tabindex="-1">
+							<input name="" id="" title="사진 올리기" type="file">
+						</span>
+						<button class="btnUrl" tabindex="-1">외부URL</button>
+                        <input type="text" class="url" name="" id="" value="" placeholder="유튜브나 웹페이지 주소를 입력하고 엔터를 누르세요." />
+						<!-- <input type="text" class="url ac" name="" id="" value="가져오는 중입니다." /> -->
+					</div>
+				</div>
+			</div>
+			<div class="btnArea">
+				<button class="btnUp" tabindex="-1">이 스쿱 위로</button>
+				<button class="btnDown" tabindex="-1">이 스쿱 아래로</button>
+				<button class="btnDel" tabindex="-1">이 스쿱 지우기</button>
+			</div>
+			<div class="btmBtn">
+				<button class="btnLoad" tabindex="-1">스쿱불러오기</button><button class="btnAdd">스쿱추가하기</button>
+			</div>
+		</section>
+		<!-- //한 스쿱 -->
+	</article>
+	<!-- //포스트 상세뷰 -->
+	<footer>
+	</footer>
+</div>
+
+
+</body>
+</html>

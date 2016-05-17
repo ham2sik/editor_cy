@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+
+/* 포스트에디터 */
+.coverArea.postEditor {border-bottom:1px dashed #dfdfdf; }
+	.coverArea.postEditor figure {}
+	.coverArea.postEditor figure span.dimmed {display:block; position: absolute; left:0; top:0; width:100%; height:450px; background-color: rgba(0, 0, 0, 0.3); }
+	.coverArea.postEditor .intro {background-color:transparent; }
+	.coverArea.postEditor .intro .postTitle {position: absolute; left:50%; bottom:56px; width: 786px; padding-top:0; margin-left:-393px; }
+	/*.coverArea.postEditor .intro .postTitle input[type=text] {width: 770px; height:70px; color: #dddddd; border:1px dashed #d6d6d6; padding:2px 7px;  }*/
+	.coverArea.postEditor .intro .postTitle .inpuText {width: 770px; min-height:57px; max-height:230px; color: #dddddd; border:1px dashed #d6d6d6; overflow:hidden; padding:0 6px; }
+  .coverArea.postEditor .intro div.cover {position: absolute; left:50%; top:148px; margin-left: -385px; }
+  .coverArea.postEditor .intro div.cover .btnChgCover {background-position: 0 -100px; }
+  .coverArea.postEditor .intro div.cover .btnChgCover:hover {background-position: 0 -50px; }
+  .coverArea.postEditor .intro .editUtil.fixed {position: fixed; left:50%; top:77px; width:770px; z-index:1000; margin-left:-385px; }
+  .coverArea.postEditor .intro .editUtil.fixed .submit {float:right; }
+  .coverArea.postEditor .intro .editUtil.fixed .cancel {float:left; }
+
+  .coverArea.postEditor .intro .editUtil {position: absolute; left:50%; top:17px; width:770px; margin-left:-385px; }
+  .coverArea.postEditor .intro .editUtil .cover {position: absolute; top:131px; }
+  .coverArea.postEditor .intro .editUtil .cover .btnChgCover {background-position: 0 -100px; }
+  .coverArea.postEditor .intro .editUtil .cover .btnChgCover:hover {background-position: 0 -50px; }
+  .coverArea.postEditor .intro .editUtil .submit {float:right; }
+  .coverArea.postEditor .intro .editUtil .cancel {float:left; }
+
+	
+
+/* deafault.css */
+
+/* medium-editor.css */
+.medium-toolbar-arrow-under:after, .medium-toolbar-arrow-over:before {
+  position: absolute;
+  left: 50%;
+  display: block;
+  margin-left: -8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  content: ""; }
+
+.medium-toolbar-arrow-under:after {
+  border-width: 8px 8px 0 8px; }
+
+.medium-toolbar-arrow-over:before {
+  top: -8px;
+  border-width: 0 8px 8px 8px; }
+
+.medium-editor-toolbar, .medium-editor-anchor-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  visibility: hidden;
+  font-size: 16px;
+  font-family: HelveticaNeue, Helvetica, Arial, sans-serif; }
+  .medium-editor-toolbar ul, .medium-editor-anchor-preview ul {
+    margin: 0;
+    padding: 0; }
+  .medium-editor-toolbar li, .medium-editor-anchor-preview li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .medium-editor-toolbar li button, .medium-editor-anchor-preview li button {
+      display: block;
+      margin: 0;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1.33;
+      text-decoration: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+    .medium-editor-toolbar li .medium-editor-action-underline, .medium-editor-anchor-preview li .medium-editor-action-underline {
+      text-decoration: underline; }
+    .medium-editor-toolbar li .medium-editor-action-pre, .medium-editor-anchor-preview li .medium-editor-action-pre {
+      padding: 15px 0;
+      font-weight: 100;
+      font-size: 12px;
+      font-family: 'Menlo', monospace; }
+
+.medium-editor-anchor-preview i {
+  display: inline-block;
+  margin: 5px 5px 5px 10px;
+  text-decoration: underline;
+  font-style: normal;
+  cursor: pointer; }
+
+.medium-editor-toolbar-active, .medium-editor-anchor-preview-active {
+  visibility: visible;
+  -webkit-animation: pop-upwards 160ms forwards linear;
+  -ms-animation: pop-upwards 160ms forwards linear;
+  animation: pop-upwards 160ms forwards linear;
+  -webkit-transition: top 0.075s ease-out, left 0.075s ease-out;
+  transition: top 0.075s ease-out, left 0.075s ease-out; }
+
+.medium-editor-action-bold {
+  font-weight: bolder; }
+
+.medium-editor-action-italic {
+  font-style: italic; }
+
+.medium-editor-toolbar-form-anchor {
+  display: none; }
+  /*.medium-editor-toolbar-form-anchor input, .medium-editor-toolbar-form-anchor a {
+    font-family: HelveticaNeue, Helvetica, Arial, sans-serif; }*/
+  .medium-editor-toolbar-form-anchor input {
+    margin: 0;
+    padding: 6px;
+    width: 316px;
+    border: none;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .medium-editor-toolbar-form-anchor input:focus {
+      outline: 0;
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      -webkit-appearance: none;
+      -moz-appearance: none; }
+  .medium-editor-toolbar-form-anchor a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 24px; }
+
+section.editWrap {position: relative; width:786px; margin:0 auto; }
+section.editWrap:first-child {margin-top:32px; }
+section.editWrap .scope {border:1px dashed #fff; }
+  section.editWrap.focus .scope {border-color: #cccccc; }
+  section.editWrap.editing {margin-bottom:32px; }
+  section.editWrap.editing .scope {border-color: #cccccc; }
+	section.editWrap .scope .divis {position: relative; height:1px; border:none; border-bottom:1px dashed #fff; margin:0; }
+  section.editWrap.focus .scope .divis {border-color: #cccccc; }
+  section.editWrap.editing .scope .divis {border-color: #cccccc; }
+	section.editWrap .scope .divis button.switching {position: absolute; right:-25px; top:-9px; width: 14px; height: 20px; border:none; text-indent:-3000px; background:url("../../images/post/btn_scoop_switching.gif") no-repeat; }
+	section.editWrap .scope .divis button.switching:hover {background-position:-50px 0; }
+	section.editWrap .scope .wysiwyg {min-height:32px; line-height:32px; padding:0 6px; }
+	section.editWrap .scope .wysiwyg span.desc {color: #aaaaaa; }
+	section.editWrap .scope .wysiwyg span.desc em {font-style:normal; text-decoration: none; color: #78e0d7; cursor:pointer; }
+	section.editWrap .scope .contents {display:none; position: relative; color: #aaaaaa; min-height:32px; padding:0 6px 0 38px; }
+	section.editWrap .scope .contents.upload,
+  section.editWrap.focus .scope .contents {display:block; }
+  section.editWrap.editing .scope .contents {display:block; }
+	/*section.editWrap .scope .contents button.btnUpload {position: absolute; left:6px; top:4px; width: 24px; height: 24px; border:none; text-indent:-3000px; background:url("../../images/post/btn_scoop_util.gif") no-repeat; }*/
+	section.editWrap .scope .contents .loadCont {position: absolute; left:6px; top:4px; width: 772px; height: 24px; background-color:#fff; }
+	section.editWrap .scope .contents .loadCont button {width: 24px; height: 24px; border:none; text-indent:-3000px; vertical-align: top; background:url("../../images/post/btn_scoop_util.gif") no-repeat ; }
+	section.editWrap .scope .contents .loadCont .btnClose {display:none; background-position: 0 -50px; }
+  section.editWrap .scope .contents .loadCont .btnClose:hover {background-position: 0 -100px; }
+	section.editWrap .scope .contents .loadCont .btnPhoto {position: relative; display:inline-block; width: 24px; height: 24px; border:none; text-indent:-3000px; vertical-align: top; background:url("../../images/post/btn_scoop_util.gif") no-repeat -32px -50px; overflow:hidden; }
+  section.editWrap .scope .contents .loadCont .btnPhoto:hover {background-position: -32px -100px; }
+	section.editWrap .scope .contents .loadCont .btnPhoto input[type="file"] {position: absolute; left:-30px; top:-30px; width:100px; height:100px; vertical-align:top; opacity:0; cursor:pointer; }
+	section.editWrap .scope .contents .loadCont .btnUrl {background-position: -64px -50px; }
+  section.editWrap .scope .contents .loadCont .btnUrl:hover {background-position: -64px -100px; }
+	section.editWrap .scope .contents .loadCont input.url {display:none; position: absolute; left:27px; top:-1px; width: 745px; height: 24px; border:none; background-color:#fff; }
+	section.editWrap .scope .divis button {display:none; }
+  section.editWrap .scope .scoopLoad {font-size:16px; line-height: 32px; padding: 0px 6px; }
+  section.editWrap.focus .scope .divis button {display:block; }
+  section.editWrap .btnArea {display:none; }
+  section.editWrap.focus .btnArea {display:block; }
+  section.editWrap.editing .btnArea {display:block; }
+	section.editWrap .btnArea button {position: absolute; width: 16px; height: 9px; border:none; text-indent:-3000px; background:url("../../images/post/btn_scoop_updown.gif") no-repeat; }
+	section.editWrap .btnArea .btnUp {left:-32px; top:-20px; background-position:0 0; }
+	section.editWrap .btnArea .btnUp:hover {background-position:-50px 0; }
+	section.editWrap .btnArea .btnDown {left:-32px; bottom:44px; background-position:0 -39px; }
+	section.editWrap .btnArea .btnDown:hover {background-position:-50px -39px; }
+	section.editWrap .btnArea .btnDel {display:none; right:0; top:-28px; width: 14px; height: 14px; text-indent:0; color: #d1d1d1; text-indent:-3000px; background:url("../../images/post/btn_scoop_del.gif") no-repeat; padding:0; }
+	section.editWrap .btnArea .btnDel:hover {background-position:0 -50px; }
+	section.editWrap .wysiwyg > p {margin:0; }
+	section.editWrap .medium-editor-placeholder {position: relative; }
+	section.editWrap .medium-editor-placeholder:after {position: absolute; left:6px; top:0; content: attr(data-placeholder); color: #aaaaaa; font-style:normal; }
+	section.editWrap .btmBtn {display:block; position: relative; width: 100%; height: 52px; line-height: 32px; text-align: center; padding-top:12px; }
+  section.editWrap .btmBtn button {opacity:0; 
+  -webkit-transition:opacity 0.2s;
+    transition:opacity 0.2s; }
+  section.editWrap .btmBtn:hover button {opacity:1; }
+  section.editWrap.focus .btmBtn button {opacity:1; }
+  section.editWrap .btmBtn button.btnLoad {width: 40px; height: 40px; color: #d1d1d1; text-align: center; border:1px solid #d1d1d1; text-indent: -3000px; vertical-align: middle; background:url("../../images/post/btn_editor_add.png") no-repeat 8px 7px; margin-right:12px; 
+        border-radius: 20px; 
+        -moz-border-radius: 20px; 
+        -webkit-border-radius: 20px; }
+  section.editWrap .btmBtn button.btnLoad:hover {color: #78e0d7; border-color:#78e0d7; background-position: 8px -43px; }
+  section.editWrap .btmBtn button.btnAdd {width: 40px; height: 40px; color: #d1d1d1; text-align: center; border:1px solid #d1d1d1; text-indent: -3000px; vertical-align: middle; background:url("../../images/post/btn_editor_add.png") no-repeat -44px 7px; 
+        border-radius: 20px; 
+        -moz-border-radius: 20px; 
+        -webkit-border-radius: 20px; }
+  section.editWrap .btmBtn button.btnAdd:hover {color: #78e0d7; border-color:#78e0d7; background-position: -44px -43px; }
+	section.editWrap .btmBtn .editBtn {position: absolute; right:1px; top:1px; height:30px; }
+	section.editWrap .btmBtn .editBtn button {vertical-align: top; }
+
+/* 텍스트편집에 따른 테마 */
+section.editWrap .scope .contents.upload {padding:7px; }
+	section.editWrap .scope .contents.upload figure {position: relative; text-align: center; }
+	section.editWrap .scope .contents.upload figure img {max-width:540px; }
+	section.editWrap .scope .contents.upload figure.small img {max-width:none; width: 540px; }
+	section.editWrap .scope .contents.upload figure.large img {max-width:none; width: 100%; }
+	section.editWrap .scope .contents.upload .imgControl {display:none; }
+  section.editWrap.focus .scope .contents.upload .imgControl,
+  section.editWrap.editing .scope .contents.upload .imgControl {display:block; }
+	section.editWrap .scope .contents.upload .imgControl li {position: absolute; }
+	section.editWrap .scope .contents.upload .imgControl .size {left:50%; bottom:22px; width:71px; height:43px; background: url("../../images/post/btn_img_size_control.png") no-repeat; padding-left:39px; margin-left:-55px; }
+	section.editWrap .scope .contents.upload .imgControl .size button {width:32px; height:40px; font-size:16px; color: #e2e2e2; border:none; background-color: transparent; padding-bottom:2px; }
+	section.editWrap .scope .contents.upload .imgControl .size button.btnSmall {}
+	section.editWrap .scope .contents.upload .imgControl .size button.btnLarge {}
+  section.editWrap .scope .contents.upload .imgControl .size button.on {color: #78e0d7; }
+	section.editWrap .scope .contents.upload .imgControl .del {right:122px; top:7px; }
+	section.editWrap .scope .contents.upload .scrap {position: relative; width:538px; border:1px solid #dddddd; margin:0 auto; }
+	/*section.editWrap .scope .contents.upload .scrap figure {margin:-1px -1px 0 -1px; }*/
+	section.editWrap .scope .contents.upload .scrap figure img {max-width:100%; }
+  section.editWrap .scope .contents.upload .scrap figure iframe {width:100%; height: 240px; vertical-align: top; }
+	section.editWrap .scope .contents.upload .scrap dl.data {position: relative; font-size:12px; color: #aaaaaa; line-height: 32px; background:url("../../images/post/bg_card_div_line01.png") repeat-x left top; padding:15px 20px 13px; margin-top:-6px; }
+	section.editWrap .scope .contents.upload .scrap dl.data dt {height: 32px; font-size:18px; font-weight:bold; color: #747474; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-wrap: normal; }
+	section.editWrap .scope .contents.upload .scrap dl.data dd {font-size:14px; }
+	section.editWrap .scope .contents.upload .scrap dl.data dd a {color: #f95757; font-size:12px; text-decoration: none; }
+  section.editWrap .scope .contents.upload .scrap .contDel {display:none; position: absolute; right:-1px; top:-1px; }
+  section.editWrap.focus .scope .contents.upload .scrap .contDel,
+  section.editWrap.editing .scope .contents.upload .scrap .contDel {display:block; }
+	section.editWrap .scope .source {font-size:12px; text-align: right; border-top:1px dashed #FFF; padding:7px; }
+  section.editWrap.focus .scope .source {border-color: #cccccc; }
+  section.editWrap.editing .scope .source {border-color: #cccccc; }
+section.editWrap .scope .source li {height:18px; color: #aaaaaa; line-height:14px; }
+	section.editWrap .scope .source li.postName { }
+	section.editWrap .scope .source li.postName a {color: #87adc0; text-decoration:none; }
+	section.editWrap .scope .source li.blogName {}
+	section.editWrap .scope .source li.blogName a {color: #5d5d5d; text-decoration:none; }
