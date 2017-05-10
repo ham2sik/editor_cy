@@ -1,11 +1,15 @@
 ```html
-<style>
-	.case2 {width: 60px;height: 58px;background-size: 60px 58px;font-size: 0;}
-</style>
+<script type="text/javascript" src="http://its.jobkorea.kr/content/js/lazyUIT.min.js"></script>
+<script>
+	$(window).load(function() {
+		// lazyUIT.youTube(element);
+		lazyUIT.youTube();
+	});
+</script>
 
 <!-- 입력 소스 -->
-<div class="case2" data-bg-original="http://file1.jobkorea.co.kr/Super/33/610/m.emforce_info02.gif">기업형태</div>
+<div class="lazyYoutube" data-src="https://www.youtube.com/embed/3W5ACF-guFc" data-options='{"title":"잡코리아 2017년 신입공채", "width":"560", "height":"315"}'></div>
 
 <!-- lazy 실행 후 변환된 소스 -->
-<div class="case2" style='background-image: url("http://file1.jobkorea.co.kr/Super/33/610/m.emforce_info02.gif");'>기업형태</div>
+<div class="lazyYoutube"><iframe width="560" height="315" title="잡코리아 2017년 신입공채" src="https://www.youtube.com/embed/3W5ACF-guFc" frameborder="0" allowfullscreen></iframe></div>
 ```
